@@ -1,0 +1,43 @@
+import fs from 'fs';
+import path from 'path';
+
+const outDir = './public/assets/images';
+if (!fs.existsSync(outDir)) {
+  fs.mkdirSync(outDir, { recursive: true });
+}
+
+// 1. Create PizzaGarden Logo SVG
+const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" fill="none">
+  <g transform="translate(10, 10)">
+    <!-- Pizza slice emblem circle -->
+    <circle cx="50" cy="50" r="46" fill="#0f172a" stroke="#facc15" stroke-width="4"/>
+    <!-- Green slice half -->
+    <path d="M 50 10 A 40 40 0 0 1 90 50 L 50 50 Z" fill="#16a34a"/>
+    <!-- Red slice half -->
+    <path d="M 90 50 A 40 40 0 0 1 50 90 L 50 50 Z" fill="#dc2626"/>
+    <!-- Red slice half left -->
+    <path d="M 50 90 A 40 40 0 0 1 10 50 L 50 50 Z" fill="#b91c1c"/>
+    <!-- Green slice top left -->
+    <path d="M 10 50 A 40 40 0 0 1 50 10 L 50 50 Z" fill="#22c55e"/>
+    <!-- Crust border -->
+    <circle cx="50" cy="50" r="40" fill="none" stroke="#fef08a" stroke-width="5"/>
+    <!-- Topping dots -->
+    <circle cx="36" cy="35" r="4" fill="#ffffff"/>
+    <circle cx="64" cy="35" r="4" fill="#000000"/>
+    <circle cx="36" cy="65" r="4" fill="#000000"/>
+    <circle cx="64" cy="65" r="4" fill="#ffffff"/>
+    <circle cx="50" cy="50" r="7" fill="#facc15"/>
+    <!-- Leaf garnish -->
+    <path d="M 50 20 C 45 15, 35 22, 50 32 C 65 22, 55 15, 50 20 Z" fill="#ffffff"/>
+  </g>
+  <!-- Text Brand -->
+  <text x="125" y="52" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="34" fill="#ffffff" letter-spacing="2">PIZZA</text>
+  <text x="245" y="52" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="34" fill="#facc15" letter-spacing="2">GARDEN</text>
+  <text x="127" y="78" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="14" fill="#38bdf8" letter-spacing="4">CHAKWAL · PAKISTAN</text>
+  <text x="127" y="98" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="600" font-size="11" fill="#94a3b8" letter-spacing="1">TASTE · AMBIENCE · SERVICES</text>
+</svg>`;
+
+fs.writeFileSync(path.join(outDir, 'pizzagarden-logo.svg'), logoSvg);
+fs.writeFileSync('./public/pizzagarden-logo.svg', logoSvg);
+
+console.log("Logo created successfully!");

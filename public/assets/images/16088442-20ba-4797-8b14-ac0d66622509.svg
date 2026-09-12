@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <linearGradient id="bg-blue2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#024182"/>
+      <stop offset="50%" stop-color="#042750"/>
+      <stop offset="100%" stop-color="#02162e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg-blue2)"/>
+  <g opacity="0.1">
+    <rect x="0" y="0" width="10" height="1000" fill="#ffffff"/><rect x="20" y="0" width="10" height="1000" fill="#ffffff"/><rect x="40" y="0" width="10" height="1000" fill="#ffffff"/><rect x="60" y="0" width="10" height="1000" fill="#ffffff"/><rect x="80" y="0" width="10" height="1000" fill="#ffffff"/><rect x="100" y="0" width="10" height="1000" fill="#ffffff"/><rect x="120" y="0" width="10" height="1000" fill="#ffffff"/><rect x="140" y="0" width="10" height="1000" fill="#ffffff"/><rect x="160" y="0" width="10" height="1000" fill="#ffffff"/><rect x="180" y="0" width="10" height="1000" fill="#ffffff"/><rect x="200" y="0" width="10" height="1000" fill="#ffffff"/><rect x="220" y="0" width="10" height="1000" fill="#ffffff"/><rect x="240" y="0" width="10" height="1000" fill="#ffffff"/><rect x="260" y="0" width="10" height="1000" fill="#ffffff"/><rect x="280" y="0" width="10" height="1000" fill="#ffffff"/><rect x="300" y="0" width="10" height="1000" fill="#ffffff"/><rect x="320" y="0" width="10" height="1000" fill="#ffffff"/><rect x="340" y="0" width="10" height="1000" fill="#ffffff"/><rect x="360" y="0" width="10" height="1000" fill="#ffffff"/><rect x="380" y="0" width="10" height="1000" fill="#ffffff"/><rect x="400" y="0" width="10" height="1000" fill="#ffffff"/><rect x="420" y="0" width="10" height="1000" fill="#ffffff"/><rect x="440" y="0" width="10" height="1000" fill="#ffffff"/><rect x="460" y="0" width="10" height="1000" fill="#ffffff"/><rect x="480" y="0" width="10" height="1000" fill="#ffffff"/><rect x="500" y="0" width="10" height="1000" fill="#ffffff"/><rect x="520" y="0" width="10" height="1000" fill="#ffffff"/><rect x="540" y="0" width="10" height="1000" fill="#ffffff"/><rect x="560" y="0" width="10" height="1000" fill="#ffffff"/><rect x="580" y="0" width="10" height="1000" fill="#ffffff"/><rect x="600" y="0" width="10" height="1000" fill="#ffffff"/><rect x="620" y="0" width="10" height="1000" fill="#ffffff"/><rect x="640" y="0" width="10" height="1000" fill="#ffffff"/><rect x="660" y="0" width="10" height="1000" fill="#ffffff"/><rect x="680" y="0" width="10" height="1000" fill="#ffffff"/><rect x="700" y="0" width="10" height="1000" fill="#ffffff"/><rect x="720" y="0" width="10" height="1000" fill="#ffffff"/><rect x="740" y="0" width="10" height="1000" fill="#ffffff"/><rect x="760" y="0" width="10" height="1000" fill="#ffffff"/><rect x="780" y="0" width="10" height="1000" fill="#ffffff"/>
+  </g>
+  <g transform="translate(40, 30)">
+    <circle cx="36" cy="36" r="32" fill="#0f172a" stroke="#facc15" stroke-width="3"/>
+    <text x="80" y="32" font-family="system-ui, sans-serif" font-weight="900" font-size="24" fill="#ffffff">PIZZA</text>
+    <text x="155" y="32" font-family="system-ui, sans-serif" font-weight="900" font-size="24" fill="#facc15">GARDEN</text>
+    <text x="80" y="52" font-family="system-ui, sans-serif" font-weight="700" font-size="12" fill="#38bdf8" letter-spacing="2">CHAKWAL</text>
+  </g>
+  <text x="400" y="140" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="64" fill="#facc15">FAMILY</text>
+  <text x="320" y="235" text-anchor="end" font-family="system-ui, sans-serif" font-weight="900" font-size="80" fill="#ffffff">DEAL</text>
+  <text x="410" y="270" text-anchor="start" font-family="system-ui, sans-serif" font-weight="900" font-size="160" fill="#ffffff">1</text>
+  
+  <rect x="230" y="275" width="340" height="34" rx="6" fill="#facc15"/>
+  <text x="400" y="298" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="14" fill="#0f172a" letter-spacing="2">SHARE THE MEGA TREAT CRAVINGS</text>
+
+  <!-- Price Tag -->
+  <g transform="translate(470, 335)">
+    <rect width="280" height="100" rx="12" fill="#ffffff"/>
+    <text x="25" y="65" font-family="system-ui, sans-serif" font-weight="900" font-size="34" fill="#024182">Rs.</text>
+    <text x="85" y="68" font-family="system-ui, sans-serif" font-weight="900" font-size="52" fill="#024182">4899</text>
+    <rect x="15" y="78" width="250" height="20" rx="4" fill="#facc15"/>
+    <text x="140" y="93" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="11" fill="#021b38" letter-spacing="1">DINE-IN | TAKE-AWAY | DELIVERY</text>
+  </g>
+
+  <!-- Items list -->
+  <g transform="translate(50, 335)">
+    <rect width="360" height="210" rx="14" fill="#022954" stroke="#38bdf8" stroke-width="2"/>
+    <text x="25" y="38" font-family="system-ui, sans-serif" font-weight="800" font-size="18" fill="#facc15">1. EXTRA LARGE PIZZA</text>
+    <text x="25" y="70" font-family="system-ui, sans-serif" font-weight="800" font-size="18" fill="#ffffff">2. PATTY BURGERS</text>
+    <text x="25" y="102" font-family="system-ui, sans-serif" font-weight="800" font-size="18" fill="#ffffff">3. 4 Pcs MALAI ROLLS</text>
+    <text x="25" y="134" font-family="system-ui, sans-serif" font-weight="800" font-size="18" fill="#ffffff">4. 10 Pcs NUGGETS</text>
+    <text x="25" y="166" font-family="system-ui, sans-serif" font-weight="800" font-size="18" fill="#ffffff">5. 1 RUSSIAN SALAD</text>
+    <text x="25" y="198" font-family="system-ui, sans-serif" font-weight="800" font-size="18" fill="#ffffff">6. 2 COLD DRINKS 1.5 LITRE</text>
+  </g>
+
+  <!-- Food graphic composition -->
+  <g transform="translate(400, 720)">
+    <ellipse cx="0" cy="180" rx="360" ry="80" fill="#e2e8f0" opacity="0.9"/>
+    <!-- XL Pizza -->
+    <circle cx="0" cy="-60" r="160" fill="#f59e0b" stroke="#78350f" stroke-width="10"/>
+    <circle cx="0" cy="-60" r="140" fill="#fde68a"/>
+    <!-- Burgers -->
+    <g transform="translate(-250, 20)">
+      <ellipse cx="60" cy="50" rx="60" ry="35" fill="#d97706"/>
+      <ellipse cx="60" cy="40" rx="65" ry="15" fill="#15803d"/>
+      <ellipse cx="60" cy="30" rx="55" ry="30" fill="#f59e0b"/>
+    </g>
+    <!-- Nuggets & Salad -->
+    <g transform="translate(140, 40)">
+      <ellipse cx="60" cy="60" rx="80" ry="30" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <ellipse cx="60" cy="55" rx="70" ry="20" fill="#fef08a"/>
+    </g>
+    <!-- 2 Bottles Coke -->
+    <g transform="translate(260, -80)">
+      <rect x="0" y="0" width="30" height="150" rx="10" fill="#1c1917"/>
+      <rect x="35" y="0" width="30" height="150" rx="10" fill="#1c1917"/>
+      <rect x="0" y="60" width="65" height="30" fill="#dc2626"/>
+    </g>
+  </g>
+
+  <g transform="translate(0, 930)">
+    <rect width="800" height="70" fill="#02162e"/>
+    <text x="40" y="32" font-family="system-ui, sans-serif" font-weight="900" font-size="18" fill="#ffffff">| WhatsApp: +92 329 6864242</text>
+    <text x="40" y="52" font-family="system-ui, sans-serif" font-weight="600" font-size="12" fill="#94a3b8">TALAGANG HWY, OPPOSITE NFC, CHAKWAL</text>
+    <rect x="580" y="15" width="180" height="40" rx="20" fill="#22c55e"/>
+    <text x="670" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="14" fill="#ffffff">ORDER ON WHATSAPP</text>
+  </g>
+</svg>

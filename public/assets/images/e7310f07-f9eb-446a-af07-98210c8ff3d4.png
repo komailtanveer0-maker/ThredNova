@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <linearGradient id="bg-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#024182"/>
+      <stop offset="50%" stop-color="#052c5c"/>
+      <stop offset="100%" stop-color="#021b38"/>
+    </linearGradient>
+    <linearGradient id="yellow-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Blue vertical ribbed background -->
+  <rect width="800" height="1000" fill="url(#bg-blue)"/>
+  <!-- Ribbed lines effect -->
+  <g opacity="0.12">
+    <rect x="0" y="0" width="10" height="1000" fill="#ffffff"/><rect x="20" y="0" width="10" height="1000" fill="#ffffff"/><rect x="40" y="0" width="10" height="1000" fill="#ffffff"/><rect x="60" y="0" width="10" height="1000" fill="#ffffff"/><rect x="80" y="0" width="10" height="1000" fill="#ffffff"/><rect x="100" y="0" width="10" height="1000" fill="#ffffff"/><rect x="120" y="0" width="10" height="1000" fill="#ffffff"/><rect x="140" y="0" width="10" height="1000" fill="#ffffff"/><rect x="160" y="0" width="10" height="1000" fill="#ffffff"/><rect x="180" y="0" width="10" height="1000" fill="#ffffff"/><rect x="200" y="0" width="10" height="1000" fill="#ffffff"/><rect x="220" y="0" width="10" height="1000" fill="#ffffff"/><rect x="240" y="0" width="10" height="1000" fill="#ffffff"/><rect x="260" y="0" width="10" height="1000" fill="#ffffff"/><rect x="280" y="0" width="10" height="1000" fill="#ffffff"/><rect x="300" y="0" width="10" height="1000" fill="#ffffff"/><rect x="320" y="0" width="10" height="1000" fill="#ffffff"/><rect x="340" y="0" width="10" height="1000" fill="#ffffff"/><rect x="360" y="0" width="10" height="1000" fill="#ffffff"/><rect x="380" y="0" width="10" height="1000" fill="#ffffff"/><rect x="400" y="0" width="10" height="1000" fill="#ffffff"/><rect x="420" y="0" width="10" height="1000" fill="#ffffff"/><rect x="440" y="0" width="10" height="1000" fill="#ffffff"/><rect x="460" y="0" width="10" height="1000" fill="#ffffff"/><rect x="480" y="0" width="10" height="1000" fill="#ffffff"/><rect x="500" y="0" width="10" height="1000" fill="#ffffff"/><rect x="520" y="0" width="10" height="1000" fill="#ffffff"/><rect x="540" y="0" width="10" height="1000" fill="#ffffff"/><rect x="560" y="0" width="10" height="1000" fill="#ffffff"/><rect x="580" y="0" width="10" height="1000" fill="#ffffff"/><rect x="600" y="0" width="10" height="1000" fill="#ffffff"/><rect x="620" y="0" width="10" height="1000" fill="#ffffff"/><rect x="640" y="0" width="10" height="1000" fill="#ffffff"/><rect x="660" y="0" width="10" height="1000" fill="#ffffff"/><rect x="680" y="0" width="10" height="1000" fill="#ffffff"/><rect x="700" y="0" width="10" height="1000" fill="#ffffff"/><rect x="720" y="0" width="10" height="1000" fill="#ffffff"/><rect x="740" y="0" width="10" height="1000" fill="#ffffff"/><rect x="760" y="0" width="10" height="1000" fill="#ffffff"/><rect x="780" y="0" width="10" height="1000" fill="#ffffff"/>
+  </g>
+
+  <!-- Header Brand -->
+  <g transform="translate(40, 30)">
+    <circle cx="36" cy="36" r="32" fill="#0f172a" stroke="#facc15" stroke-width="3"/>
+    <text x="80" y="32" font-family="system-ui, sans-serif" font-weight="900" font-size="24" fill="#ffffff">PIZZA</text>
+    <text x="155" y="32" font-family="system-ui, sans-serif" font-weight="900" font-size="24" fill="#facc15">GARDEN</text>
+    <text x="80" y="52" font-family="system-ui, sans-serif" font-weight="700" font-size="12" fill="#38bdf8" letter-spacing="2">CHAKWAL</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="400" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="44" fill="#facc15" letter-spacing="3">MEGA TREAT</text>
+  <text x="320" y="240" text-anchor="end" font-family="system-ui, sans-serif" font-weight="900" font-size="80" fill="#ffffff">FIT FOR</text>
+  <text x="420" y="270" text-anchor="start" font-family="system-ui, sans-serif" font-weight="900" font-size="160" fill="#ffffff" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.5))">3</text>
+  
+  <rect x="230" y="280" width="340" height="34" rx="6" fill="#facc15"/>
+  <text x="400" y="303" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="14" fill="#0f172a" letter-spacing="2">SHARE THE MEGA TREAT CRAVINGS</text>
+
+  <!-- Price Tag Card -->
+  <g transform="translate(470, 340)">
+    <rect width="280" height="100" rx="12" fill="#ffffff" filter="drop-shadow(0 15px 30px rgba(0,0,0,0.4))"/>
+    <text x="25" y="65" font-family="system-ui, sans-serif" font-weight="900" font-size="34" fill="#024182">Rs.</text>
+    <text x="85" y="68" font-family="system-ui, sans-serif" font-weight="900" font-size="52" fill="#024182">2299</text>
+    <rect x="15" y="78" width="250" height="20" rx="4" fill="#facc15"/>
+    <text x="140" y="93" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="11" fill="#021b38" letter-spacing="1">DINE-IN | TAKE-AWAY | DELIVERY</text>
+  </g>
+
+  <!-- Items list badge -->
+  <g transform="translate(50, 340)">
+    <rect width="360" height="180" rx="14" fill="#022954" stroke="#38bdf8" stroke-width="2" opacity="0.95"/>
+    <text x="25" y="42" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#facc15">1. MEDIUM PIZZA</text>
+    <text x="25" y="78" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#ffffff">2. BEHARI SPIN ROLLS</text>
+    <text x="25" y="114" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#ffffff">3. CHEESE FRIES</text>
+    <text x="25" y="150" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#ffffff">4. 1 LITRE COLD DRINK</text>
+  </g>
+
+  <!-- Food composition mockup showcase -->
+  <g transform="translate(400, 720)">
+    <!-- White pedestal stage -->
+    <ellipse cx="0" cy="180" rx="360" ry="80" fill="#e2e8f0" opacity="0.9"/>
+    <!-- Pizza illustration circle -->
+    <circle cx="90" cy="-60" r="160" fill="#f59e0b" stroke="#78350f" stroke-width="12"/>
+    <circle cx="90" cy="-60" r="140" fill="#fde68a"/>
+    <!-- Toppings -->
+    <circle cx="30" cy="-90" r="12" fill="#7f1d1d"/><circle cx="45" cy="-100" r="8" fill="#15803d"/><circle cx="20" cy="-80" r="6" fill="#000000"/><circle cx="150" cy="-90" r="12" fill="#7f1d1d"/><circle cx="165" cy="-100" r="8" fill="#15803d"/><circle cx="140" cy="-80" r="6" fill="#000000"/><circle cx="90" cy="-10" r="12" fill="#7f1d1d"/><circle cx="105" cy="-20" r="8" fill="#15803d"/><circle cx="80" cy="0" r="6" fill="#000000"/><circle cx="40" cy="-20" r="12" fill="#7f1d1d"/><circle cx="55" cy="-30" r="8" fill="#15803d"/><circle cx="30" cy="-10" r="6" fill="#000000"/><circle cx="130" cy="-20" r="12" fill="#7f1d1d"/><circle cx="145" cy="-30" r="8" fill="#15803d"/><circle cx="120" cy="-10" r="6" fill="#000000"/><circle cx="90" cy="-110" r="12" fill="#7f1d1d"/><circle cx="105" cy="-120" r="8" fill="#15803d"/><circle cx="80" cy="-100" r="6" fill="#000000"/><circle cx="50" cy="-50" r="12" fill="#7f1d1d"/><circle cx="65" cy="-60" r="8" fill="#15803d"/><circle cx="40" cy="-40" r="6" fill="#000000"/><circle cx="120" cy="-50" r="12" fill="#7f1d1d"/><circle cx="135" cy="-60" r="8" fill="#15803d"/><circle cx="110" cy="-40" r="6" fill="#000000"/>
+    
+    <!-- Behari Spin Rolls & Dip -->
+    <g transform="translate(-230, 40)">
+      <rect x="0" y="0" width="130" height="40" rx="10" fill="#f59e0b" stroke="#b45309" stroke-width="3"/>
+      <rect x="20" y="30" width="130" height="40" rx="10" fill="#d97706" stroke="#b45309" stroke-width="3"/>
+      <rect x="10" y="60" width="130" height="40" rx="10" fill="#f59e0b" stroke="#b45309" stroke-width="3"/>
+      <circle cx="-30" cy="70" r="28" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/>
+      <circle cx="-30" cy="70" r="22" fill="#fef08a"/>
+    </g>
+
+    <!-- Cheese Fries Tray -->
+    <g transform="translate(-80, 100)">
+      <ellipse cx="40" cy="30" rx="100" ry="35" fill="#ffffff" stroke="#cbd5e1" stroke-width="3"/>
+      <path d="M -40 25 Q 40 -10 120 25 Q 40 50 -40 25 Z" fill="#facc15"/>
+      <path d="M -30 22 Q 40 5 110 22" stroke="#dc2626" stroke-width="6" fill="none"/>
+    </g>
+
+    <!-- Coca Cola Bottle -->
+    <g transform="translate(250, -50)">
+      <rect x="25" y="10" width="20" height="25" rx="3" fill="#dc2626"/>
+      <path d="M 20 35 C 10 70, 0 110, 0 180 C 0 240, 20 260, 35 260 C 50 260, 70 240, 70 180 C 70 110, 60 70, 50 35 Z" fill="#1c1917"/>
+      <rect x="5" y="120" width="60" height="50" fill="#dc2626"/>
+      <text x="35" y="152" text-anchor="middle" font-family="'Brush Script MT', cursive, sans-serif" font-weight="bold" font-size="20" fill="#ffffff">Coca-Cola</text>
+    </g>
+  </g>
+
+  <!-- Footer official contact bar -->
+  <g transform="translate(0, 930)">
+    <rect width="800" height="70" fill="#021b38"/>
+    <text x="40" y="32" font-family="system-ui, sans-serif" font-weight="900" font-size="18" fill="#ffffff">| WhatsApp: +92 329 6864242</text>
+    <text x="40" y="52" font-family="system-ui, sans-serif" font-weight="600" font-size="12" fill="#94a3b8">TALAGANG HWY, OPPOSITE NFC, CHAKWAL</text>
+    <rect x="580" y="15" width="180" height="40" rx="20" fill="#22c55e"/>
+    <text x="670" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="14" fill="#ffffff">ORDER ON WHATSAPP</text>
+  </g>
+</svg>

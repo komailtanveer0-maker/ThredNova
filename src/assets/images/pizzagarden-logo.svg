@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Clip for Top-Left Quadrant -->
+    <clipPath id="clip-top-left">
+      <path d="M 200 200 L 200 25 A 175 175 0 0 0 25 200 Z" />
+    </clipPath>
+    <!-- Clip for Top-Right Quadrant -->
+    <clipPath id="clip-top-right">
+      <path d="M 200 200 L 200 25 A 175 175 0 0 1 375 200 Z" />
+    </clipPath>
+    <!-- Clip for Bottom-Left Quadrant -->
+    <clipPath id="clip-bottom-left">
+      <path d="M 200 200 L 25 200 A 175 175 0 0 0 200 375 Z" />
+    </clipPath>
+    <!-- Clip for Bottom-Right Quadrant -->
+    <clipPath id="clip-bottom-right">
+      <path d="M 200 200 L 375 200 A 175 175 0 0 1 200 375 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Background Circle (White) -->
+  <circle cx="200" cy="200" r="175" fill="#ffffff" stroke="#111111" stroke-width="6" />
+
+  <!-- === TOP-LEFT: Garden Leaves & Vines on White === -->
+  <g clip-path="url(#clip-top-left)">
+    <circle cx="200" cy="200" r="175" fill="#ffffff" />
+    <!-- Main stem / vine -->
+    <path d="M 60 190 Q 110 160 145 110 Q 170 70 185 30" fill="none" stroke="#1b3d22" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 120 145 Q 90 120 75 80" fill="none" stroke="#1b3d22" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M 155 95 Q 185 115 195 140" fill="none" stroke="#1b3d22" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M 90 170 Q 70 140 60 130" fill="none" stroke="#1b3d22" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Stylized Green Leaves -->
+    <!-- Leaf 1 -->
+    <path d="M 185 30 C 170 30 160 48 175 58 C 190 48 195 35 185 30 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 2 -->
+    <path d="M 155 45 C 135 45 130 65 145 75 C 160 65 165 50 155 45 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 3 -->
+    <path d="M 125 70 C 105 65 100 85 115 95 C 130 85 135 70 125 70 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 4 (left stem) -->
+    <path d="M 75 80 C 60 75 55 95 70 105 C 85 95 90 80 75 80 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 5 -->
+    <path d="M 95 110 C 80 105 75 125 90 135 C 105 125 110 110 95 110 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 6 -->
+    <path d="M 60 130 C 45 125 40 145 55 155 C 70 145 75 130 60 130 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 7 -->
+    <path d="M 85 150 C 70 150 68 170 82 178 C 96 170 98 152 85 150 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 8 -->
+    <path d="M 135 120 C 120 120 118 140 132 148 C 146 140 148 122 135 120 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 9 (right branch) -->
+    <path d="M 175 105 C 160 100 155 120 170 130 C 185 120 190 105 175 105 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 10 -->
+    <path d="M 195 140 C 180 135 175 155 190 165 C 200 155 205 142 195 140 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+  </g>
+
+  <!-- === TOP-RIGHT: Pizza Slice with Red Sauce, Black Crust, White Toppings === -->
+  <g clip-path="url(#clip-top-right)">
+    <!-- Black Outer Crust Band -->
+    <circle cx="200" cy="200" r="175" fill="#111111" />
+    <!-- Red Pizza Sauce Base -->
+    <circle cx="200" cy="200" r="152" fill="#e11d48" />
+
+    <!-- Crust scallop line -->
+    <path d="M 200 48 Q 235 55 270 75 Q 310 105 340 145 Q 355 170 362 200" fill="none" stroke="#be123c" stroke-width="4" />
+
+    <!-- White Mushroom Topping 1 (upper right) -->
+    <g transform="translate(265, 80) rotate(15)">
+      <!-- Mushroom Cap -->
+      <path d="M -16 5 C -16 -12 16 -12 16 5 C 10 5 8 2 0 2 C -8 2 -10 5 -16 5 Z" fill="#ffffff" stroke="#e11d48" stroke-width="1.5" />
+      <!-- Stem -->
+      <path d="M -5 3 L -4 14 C -4 16 4 16 4 14 L 5 3 Z" fill="#ffffff" />
+      <!-- Center Gill dot -->
+      <circle cx="0" cy="0" r="2.5" fill="#e11d48" />
+    </g>
+
+    <!-- White Mushroom Topping 2 (middle) -->
+    <g transform="translate(235, 125) rotate(-20)">
+      <path d="M -18 6 C -18 -14 18 -14 18 6 C 11 6 9 3 0 3 C -9 3 -11 6 -18 6 Z" fill="#ffffff" stroke="#e11d48" stroke-width="1.5" />
+      <path d="M -6 4 L -5 16 C -5 18 5 18 5 16 L 6 4 Z" fill="#ffffff" />
+      <circle cx="0" cy="0" r="3" fill="#e11d48" />
+    </g>
+
+    <!-- White Vegetable / Crescent Ring 1 -->
+    <path d="M 310 120 C 325 130 330 150 320 165 C 315 155 310 140 300 135 Z" fill="#ffffff" />
+    <!-- White Vegetable / Crescent Ring 2 -->
+    <path d="M 275 145 C 290 150 295 168 285 180 C 280 172 275 160 268 155 Z" fill="#ffffff" />
+    <!-- Topping dots / oregano -->
+    <circle cx="280" cy="115" r="3.5" fill="#ffffff" />
+    <circle cx="225" cy="85" r="3" fill="#ffffff" />
+    <circle cx="335" cy="175" r="3" fill="#ffffff" />
+  </g>
+
+  <!-- === BOTTOM-LEFT: Pizza Slice with Red Sauce, Black Crust, White Toppings === -->
+  <g clip-path="url(#clip-bottom-left)">
+    <!-- Black Outer Crust Band -->
+    <circle cx="200" cy="200" r="175" fill="#111111" />
+    <!-- Red Pizza Sauce Base -->
+    <circle cx="200" cy="200" r="152" fill="#e11d48" />
+
+    <!-- Scallop edge -->
+    <path d="M 38 200 Q 45 235 65 270 Q 95 310 135 340 Q 170 355 200 362" fill="none" stroke="#be123c" stroke-width="4" />
+
+    <!-- White Mushroom Topping 1 -->
+    <g transform="translate(135, 320) rotate(-165)">
+      <path d="M -16 5 C -16 -12 16 -12 16 5 C 10 5 8 2 0 2 C -8 2 -10 5 -16 5 Z" fill="#ffffff" stroke="#e11d48" stroke-width="1.5" />
+      <path d="M -5 3 L -4 14 C -4 16 4 16 4 14 L 5 3 Z" fill="#ffffff" />
+      <circle cx="0" cy="0" r="2.5" fill="#e11d48" />
+    </g>
+
+    <!-- White Mushroom Topping 2 -->
+    <g transform="translate(165, 275) rotate(160)">
+      <path d="M -18 6 C -18 -14 18 -14 18 6 C 11 6 9 3 0 3 C -9 3 -11 6 -18 6 Z" fill="#ffffff" stroke="#e11d48" stroke-width="1.5" />
+      <path d="M -6 4 L -5 16 C -5 18 5 18 5 16 L 6 4 Z" fill="#ffffff" />
+      <circle cx="0" cy="0" r="3" fill="#e11d48" />
+    </g>
+
+    <!-- White Vegetable Rings -->
+    <path d="M 90 280 C 75 270 70 250 80 235 C 85 245 90 260 100 265 Z" fill="#ffffff" />
+    <path d="M 125 255 C 110 250 105 232 115 220 C 120 228 125 240 132 245 Z" fill="#ffffff" />
+    <!-- Topping dots -->
+    <circle cx="120" cy="285" r="3.5" fill="#ffffff" />
+    <circle cx="175" cy="315" r="3" fill="#ffffff" />
+    <circle cx="65" cy="225" r="3" fill="#ffffff" />
+  </g>
+
+  <!-- === BOTTOM-RIGHT: Garden Leaves & Vines on White === -->
+  <g clip-path="url(#clip-bottom-right)">
+    <circle cx="200" cy="200" r="175" fill="#ffffff" />
+    <!-- Main stem / vine -->
+    <path d="M 340 210 Q 290 240 255 290 Q 230 330 215 370" fill="none" stroke="#1b3d22" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 280 255 Q 310 280 325 320" fill="none" stroke="#1b3d22" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M 245 305 Q 215 285 205 260" fill="none" stroke="#1b3d22" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M 310 230 Q 330 260 340 270" fill="none" stroke="#1b3d22" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Stylized Green Leaves -->
+    <!-- Leaf 1 -->
+    <path d="M 215 370 C 230 370 240 352 225 342 C 210 352 205 365 215 370 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 2 -->
+    <path d="M 245 355 C 265 355 270 335 255 325 C 240 335 235 350 245 355 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 3 -->
+    <path d="M 275 330 C 295 335 300 315 285 305 C 270 315 265 330 275 330 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 4 (right stem) -->
+    <path d="M 325 320 C 340 325 345 305 330 295 C 315 305 310 320 325 320 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 5 -->
+    <path d="M 305 290 C 320 295 325 275 310 265 C 295 275 290 290 305 290 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 6 -->
+    <path d="M 340 270 C 355 275 360 255 345 245 C 330 255 325 270 340 270 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 7 -->
+    <path d="M 315 250 C 330 250 332 230 318 222 C 304 230 302 248 315 250 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 8 -->
+    <path d="M 265 280 C 280 280 282 260 268 252 C 254 260 252 278 265 280 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 9 -->
+    <path d="M 225 295 C 240 300 245 280 230 270 C 215 280 210 295 225 295 Z" fill="#22c55e" stroke="#1b3d22" stroke-width="2" />
+    <!-- Leaf 10 -->
+    <path d="M 205 260 C 220 265 225 245 210 235 C 200 245 195 258 205 260 Z" fill="#16a34a" stroke="#1b3d22" stroke-width="2" />
+  </g>
+
+  <!-- === CENTRAL HORIZONTAL BANNER === -->
+  <!-- White Banner Background extending across diameter -->
+  <rect x="15" y="152" width="370" height="96" fill="#ffffff" />
+  
+  <!-- Thick Black Border Lines on Top and Bottom of the Banner -->
+  <rect x="15" y="152" width="370" height="11" fill="#111111" />
+  <rect x="15" y="237" width="370" height="11" fill="#111111" />
+
+  <!-- "PIZZA GARDEN" Brand Text -->
+  <text 
+    x="200" 
+    y="218" 
+    text-anchor="middle" 
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Arial Black', Impact, sans-serif" 
+    font-weight="900" 
+    font-size="44" 
+    letter-spacing="3" 
+    fill="#111111"
+  >PIZZA GARDEN</text>
+
+  <!-- Outer Black Framing Circle -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#111111" stroke-width="7" />
+</svg>

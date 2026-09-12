@@ -1,0 +1,6 @@
+{
+  "name": "PizzaGarden",
+  "description": "Discover PizzaGarden in Chakwal, Pakistan. Explore hand-crafted pizzas, burgers, family deals, restaurant ambience, and WhatsApp ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
