@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles, Phone, ArrowDown, Star, Play, MapPin, Clock } from 'lucide-react';
 import { PIZZAGARDEN_CONTACT } from '../data/menuData';
+import heroImg from '../assets/images/pizzagarden_hero_1789213225448.jpg';
 
 interface HeroProps {
   onOrderNow: () => void;
@@ -18,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({
       {/* Background Image with Warm Amber & Dark Gradient Overlays */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/assets/images/pizzagarden_hero_1789213225448.jpg"
+          src={heroImg}
           alt="PizzaGarden Chakwal Restaurant Ambience"
           className="w-full h-full object-cover object-center scale-105 animate-pulse duration-[8000ms]"
           referrerPolicy="no-referrer"

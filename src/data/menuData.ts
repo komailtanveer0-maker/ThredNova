@@ -2,6 +2,16 @@ import { MenuItem, DealItem, VideoReel } from '../types';
 import regeneratedDeal1Img from '../assets/images/regenerated_image_1789214547637.png';
 import regeneratedDeal2Img from '../assets/images/regenerated_image_1789214556946.png';
 import regeneratedDeal3Img from '../assets/images/regenerated_image_1789214562459.png';
+import pizzaDelightImg from '../assets/images/pizza_delight_1789213397214.jpg';
+import trainPizzaImg from '../assets/images/train_pizza_1789213434117.jpg';
+import zingerBurgerImg from '../assets/images/zinger_burger_1789213414778.jpg';
+import spinRollsImg from '../assets/images/spin_rolls_1789213450425.jpg';
+import burgerPrepImg from '../assets/images/reel_burger_prep_1789223185825.jpg';
+import behariRollsImg from '../assets/images/reel_behari_rolls_1789223140676.jpg';
+import pizzaSlicingImg from '../assets/images/reel_pizza_slicing_1789223702033.jpg';
+import kitchenThumbImg from '../assets/images/assets/videos/kitchen-thumb.jpg';
+import ambienceThumbImg from '../assets/images/assets/videos/ambience-thumb.jpg';
+import { getAssetUrl } from '../utils/assets';
 
 export const PIZZAGARDEN_CONTACT = {
   name: 'PizzaGarden Chakwal',
@@ -22,8 +32,8 @@ export const VIDEO_REELS: VideoReel[] = [
     id: 'reel-kitchen',
     title: 'Fresh From The Oven',
     tagline: 'Live Kitchen Craft & Cheesy Pulls',
-    videoUrl: '/assets/videos/pizzagarden-kitchen-reel.mp4',
-    posterUrl: '/assets/videos/kitchen-thumb.jpg',
+    videoUrl: getAssetUrl('assets/videos/pizzagarden-kitchen-reel.mp4'),
+    posterUrl: kitchenThumbImg,
     duration: '14.3s',
     aspectRatio: '9:16',
     features: [
@@ -38,8 +48,8 @@ export const VIDEO_REELS: VideoReel[] = [
     id: 'reel-ambience',
     title: 'Experience PizzaGarden',
     tagline: 'Taste · Ambience · Services',
-    videoUrl: '/assets/videos/pizzagarden-ambience-reel.mp4',
-    posterUrl: '/assets/videos/ambience-thumb.jpg',
+    videoUrl: getAssetUrl('assets/videos/pizzagarden-ambience-reel.mp4'),
+    posterUrl: ambienceThumbImg,
     duration: '35.6s',
     aspectRatio: '9:16',
     features: [
@@ -65,8 +75,8 @@ export const DEALS: DealItem[] = [
       'Feeds 6 to 8 Hungry Foodies',
       'Includes House Garlic Dips & Seasoning'
     ],
-    image: '/assets/images/train_pizza_1789213434117.jpg',
-    posterImage: '/assets/images/train-pizza-poster.svg',
+    image: trainPizzaImg,
+    posterImage: getAssetUrl('assets/images/train-pizza-poster.svg'),
     badge: '★ BIG BOSS RECORD 36"',
     serves: '6 - 8 Persons',
     description: 'Our show-stopping 36-inch rectangular Train Pizza served on a rustic wooden plank with three of your favorite flavors side-by-side.'
@@ -143,7 +153,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1850 },
       { size: 'X-Large', price: 2600 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     badge: 'Chef Signature',
     isPopular: true
   },
@@ -159,7 +169,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1850 },
       { size: 'X-Large', price: 2600 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     badge: 'Kebab Special',
     isSpicy: true
   },
@@ -175,7 +185,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1850 },
       { size: 'X-Large', price: 2600 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     isPopular: true
   },
   {
@@ -190,7 +200,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1850 },
       { size: 'X-Large', price: 2600 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     badge: 'Spicy Kick',
     isSpicy: true
   },
@@ -206,7 +216,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1850 },
       { size: 'X-Large', price: 2600 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg'
+    image: pizzaDelightImg
   },
   {
     id: 'p-delight',
@@ -220,7 +230,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1850 },
       { size: 'X-Large', price: 2600 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     isPopular: true
   },
 
@@ -237,7 +247,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1600 },
       { size: 'X-Large', price: 2300 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaSlicingImg,
     badge: 'Local Favorite',
     isPopular: true
   },
@@ -253,7 +263,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1600 },
       { size: 'X-Large', price: 2300 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg'
+    image: pizzaDelightImg
   },
   {
     id: 'p-tandoori',
@@ -267,7 +277,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1600 },
       { size: 'X-Large', price: 2300 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     isSpicy: true
   },
   {
@@ -282,7 +292,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1600 },
       { size: 'X-Large', price: 2300 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     isVegetarian: true
   },
   {
@@ -297,7 +307,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1600 },
       { size: 'X-Large', price: 2300 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     isVegetarian: true
   },
 
@@ -311,7 +321,7 @@ export const MENU_ITEMS: MenuItem[] = [
     sizes: [
       { size: '36-Inch', price: 3599 }
     ],
-    image: '/assets/images/train_pizza_1789213434117.jpg',
+    image: trainPizzaImg,
     badge: '36-Inch Monster',
     isPopular: true,
     flavours: ['Chicken Tikka', 'Mayo Garlic Ranch', 'Super Supreme', 'Fajita', 'Peri Peri']
@@ -326,7 +336,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 1750 },
       { size: 'X-Large', price: 2400 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     badge: 'Crunchy Crust'
   },
   {
@@ -339,7 +349,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Medium', price: 1800 },
       { size: 'Large', price: 2300 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg'
+    image: pizzaDelightImg
   },
   {
     id: 'p-crown-crust',
@@ -351,7 +361,7 @@ export const MENU_ITEMS: MenuItem[] = [
       { size: 'Large', price: 2000 },
       { size: 'X-Large', price: 2700 }
     ],
-    image: '/assets/images/pizza_delight_1789213397214.jpg'
+    image: pizzaDelightImg
   },
 
   // Burgers & Grilled
@@ -361,7 +371,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'burgers',
     description: 'Whole chicken breast marinated in hot spices, double crunch breaded, with crisp iceberg lettuce and garlic mayo on toasted sesame buns.',
     price: 500,
-    image: '/assets/images/zinger_burger_1789213414778.jpg',
+    image: zingerBurgerImg,
     badge: 'Top Burger',
     isPopular: true
   },
@@ -371,7 +381,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'burgers',
     description: 'Where burger meets pizza! Juicy patty layered with pizza sauce, melted mozzarella, black olives, and herbs.',
     price: 600,
-    image: '/assets/images/zinger_burger_1789213414778.jpg',
+    image: burgerPrepImg,
     badge: 'Hybrid Special'
   },
   {
@@ -380,7 +390,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'burgers',
     description: 'Tender chicken fillet marinated in creamy malai boti yogurt spices, chargrilled and topped with house dressing.',
     price: 750,
-    image: '/assets/images/zinger_burger_1789213414778.jpg'
+    image: zingerBurgerImg
   },
   {
     id: 'b-chapli',
@@ -388,7 +398,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'burgers',
     description: 'Authentic spiced beef chapli patty with tomato slice, mint chutney, and caramelized onion relish.',
     price: 460,
-    image: '/assets/images/zinger_burger_1789213414778.jpg'
+    image: zingerBurgerImg
   },
   {
     id: 'b-patty',
@@ -396,7 +406,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'burgers',
     description: 'Golden seasoned patty with fresh cucumber, lettuce, and creamy burger mayo.',
     price: 350,
-    image: '/assets/images/zinger_burger_1789213414778.jpg'
+    image: zingerBurgerImg
   },
 
   // Crispy Fried Chicken
@@ -406,7 +416,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'fried-chicken',
     description: '1 piece signature crispy fried chicken, served with 1 hot bun, golden French fries, and garlic dip sauce.',
     price: 400,
-    image: '/assets/images/zinger_burger_1789213414778.jpg'
+    image: zingerBurgerImg
   },
   {
     id: 'fc-3pc',
@@ -414,7 +424,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'fried-chicken',
     description: '3 pieces crispy spiced fried chicken, served with 2 buns, generous French fries, and 2 garlic mayo dips.',
     price: 900,
-    image: '/assets/images/zinger_burger_1789213414778.jpg',
+    image: zingerBurgerImg,
     isPopular: true
   },
   {
@@ -423,7 +433,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'fried-chicken',
     description: '9 pieces crispy fried chicken family bucket, served with 8 buns, jumbo French fries, and 4 creamy dips.',
     price: 2150,
-    image: '/assets/images/zinger_burger_1789213414778.jpg',
+    image: zingerBurgerImg,
     badge: 'Feast Bucket'
   },
 
@@ -434,7 +444,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'appetizers',
     description: 'Fresh dough rolled around tender spicy chicken filling and mozzarella, baked to golden brown and served with garlic mayo.',
     price: 650,
-    image: '/assets/images/spin_rolls_1789213450425.jpg',
+    image: spinRollsImg,
     badge: 'Must Try',
     isPopular: true
   },
@@ -444,7 +454,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'appetizers',
     description: 'Slow roasted chicken wings glazed in spicy tangy barbecue sauce, baked till sticky and tender.',
     price: 750,
-    image: '/assets/images/spin_rolls_1789213450425.jpg'
+    image: spinRollsImg
   },
   {
     id: 'app-hot-shots',
@@ -452,7 +462,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'appetizers',
     description: 'Bite-sized boneless chicken crunchies with spicy seasoning and dip.',
     price: 600,
-    image: '/assets/images/zinger_burger_1789213414778.jpg'
+    image: zingerBurgerImg
   },
   {
     id: 'app-nuggets',
@@ -460,7 +470,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'appetizers',
     description: 'Crispy breaded tender chicken nuggets loved by kids and adults alike.',
     price: 500,
-    image: '/assets/images/spin_rolls_1789213450425.jpg'
+    image: behariRollsImg
   },
 
   // Pasta & Fries
@@ -470,7 +480,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'pasta-fries',
     description: 'Crispy potato fries smothered in warm molten cheddar cheese sauce and seasoned with herbs.',
     price: 450,
-    image: '/assets/images/zinger_burger_1789213414778.jpg',
+    image: zingerBurgerImg,
     isPopular: true
   },
   {
@@ -479,7 +489,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'pasta-fries',
     description: 'Penne pasta tossed in spicy red & white sauce with chicken, covered in mozzarella and baked until bubbly.',
     price: 600,
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     badge: 'House Baked'
   },
   {
@@ -488,7 +498,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'pasta-fries',
     description: 'Multi-layered pasta sheets with rich meat bolognese sauce, bechamel cream, and melted cheese crust.',
     price: 750,
-    image: '/assets/images/pizza_delight_1789213397214.jpg'
+    image: pizzaDelightImg
   },
 
   // Beverages
@@ -498,7 +508,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'beverages',
     description: 'Choice of chilled Coca-Cola, Sprite, or Fanta 1.5L bottle.',
     price: 250,
-    image: '/assets/images/pizza_delight_1789213397214.jpg'
+    image: pizzaDelightImg
   },
   {
     id: 'bev-cold-drink-can',
@@ -506,7 +516,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'beverages',
     description: 'Chilled 250ml canned soda (Coke, Sprite, Fanta, Dew).',
     price: 120,
-    image: '/assets/images/pizza_delight_1789213397214.jpg'
+    image: pizzaDelightImg
   },
   {
     id: 'bev-water',
@@ -514,7 +524,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'beverages',
     description: 'Pure chilled mineral spring water.',
     price: 90,
-    image: '/assets/images/pizza_delight_1789213397214.jpg'
+    image: pizzaDelightImg
   }
 ];
 
@@ -530,10 +540,11 @@ export const FULL_MENU_POSTER_DEAL: DealItem = {
     'Signature Behari Spin Rolls',
     'Family & Super Saver Bundles'
   ],
-  image: '/assets/images/menu_full_card.svg',
-  posterImage: '/assets/images/menu_full_card.svg',
+  image: getAssetUrl('assets/images/full-menu-poster.svg'),
+  posterImage: getAssetUrl('assets/images/full-menu-poster.svg'),
   badge: 'Complete Menu',
   serves: 'Chakwal Foodies',
   description: 'Official complete menu and pricing guide for PizzaGarden Chakwal. Located at Talagang Hwy, opposite NFC.'
 };
+
 

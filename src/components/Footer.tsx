@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Clock, Sparkles, Navigation, Heart, ShieldCheck, Film } from 'lucide-react';
 import { PIZZAGARDEN_CONTACT } from '../data/menuData';
+import pizzaGardenLogo from '../assets/images/pizzagarden-logo.svg';
 
 interface FooterProps {
   onOpenReservation: () => void;
@@ -25,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white p-0.5 border border-amber-400/40 shadow-sm flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/pizzagarden-logo.svg" 
+                  src={pizzaGardenLogo} 
                   alt="Pizza Garden Logo" 
                   className="w-full h-full object-contain"
                 />

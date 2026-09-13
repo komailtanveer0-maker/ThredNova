@@ -25,6 +25,12 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { Order, OrderStatus, Reservation, MenuItem, Category, PizzaSizeOption } from '../types';
+import pizzaDelightImg from '../assets/images/pizza_delight_1789213397214.jpg';
+import trainPizzaImg from '../assets/images/train_pizza_1789213434117.jpg';
+import behariRollsImg from '../assets/images/spin_rolls_1789213450425.jpg';
+import zingerBurgerImg from '../assets/images/zinger_burger_1789213414778.jpg';
+import appetizersImg from '../assets/images/reel_behari_cutting_1789223718736.jpg';
+import drinksImg from '../assets/images/regenerated_image_1789214564553.png';
 
 interface StaffPortalModalProps {
   isOpen: boolean;
@@ -50,12 +56,12 @@ const CATEGORY_OPTIONS: { id: Category; label: string }[] = [
 ];
 
 const PRESET_PICTURES = [
-  { label: 'Special Pizza Delight', url: '/assets/images/pizza_delight_1789213251413.jpg' },
-  { label: '36" Train Pizza', url: '/assets/images/train_pizza_1789213434117.jpg' },
-  { label: 'Behari Kabab Spin Roll', url: '/assets/images/behari_rolls_1789213271171.jpg' },
-  { label: 'Crispy Zinger Burger', url: '/assets/images/zinger_burger_1789213328372.jpg' },
-  { label: 'Appetizer Wings & Fries', url: '/assets/images/pasta_fries_1789213386768.jpg' },
-  { label: 'Cold Drink Refreshment', url: '/assets/images/drinks_reels_1789213460831.jpg' },
+  { label: 'Special Pizza Delight', url: pizzaDelightImg },
+  { label: '36" Train Pizza', url: trainPizzaImg },
+  { label: 'Behari Kabab Spin Roll', url: behariRollsImg },
+  { label: 'Crispy Zinger Burger', url: zingerBurgerImg },
+  { label: 'Appetizer Wings & Fries', url: appetizersImg },
+  { label: 'Cold Drink Refreshment', url: drinksImg },
 ];
 
 export const StaffPortalModal: React.FC<StaffPortalModalProps> = ({
@@ -104,7 +110,7 @@ export const StaffPortalModal: React.FC<StaffPortalModalProps> = ({
     category: 'special-pizzas',
     description: '',
     price: 999,
-    image: '/assets/images/pizza_delight_1789213251413.jpg',
+    image: pizzaDelightImg,
     badge: '',
     isPopular: false,
     isSpicy: false,
@@ -195,7 +201,7 @@ export const StaffPortalModal: React.FC<StaffPortalModalProps> = ({
       category: item.category,
       description: item.description,
       price: item.price,
-      image: item.image || '/assets/images/pizza_delight_1789213251413.jpg',
+      image: item.image || pizzaDelightImg,
       badge: item.badge || '',
       isPopular: !!item.isPopular,
       isSpicy: !!item.isSpicy,
@@ -219,7 +225,7 @@ export const StaffPortalModal: React.FC<StaffPortalModalProps> = ({
       category: 'special-pizzas',
       description: '',
       price: 1150,
-      image: '/assets/images/pizza_delight_1789213251413.jpg',
+      image: pizzaDelightImg,
       badge: "CHEF'S SPECIAL",
       isPopular: true,
       isSpicy: false,
@@ -322,7 +328,7 @@ export const StaffPortalModal: React.FC<StaffPortalModalProps> = ({
       description: formData.description.trim(),
       price: Number(formData.price),
       sizes,
-      image: formData.image || '/assets/images/pizza_delight_1789213251413.jpg',
+      image: formData.image || pizzaDelightImg,
       badge: formData.badge.trim() || undefined,
       isPopular: formData.isPopular,
       isSpicy: formData.isSpicy,

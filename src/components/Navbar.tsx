@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { PIZZAGARDEN_CONTACT } from '../data/menuData';
 import { CartItem } from '../types';
+import pizzaGardenLogo from '../assets/images/pizzagarden-logo.svg';
 
 interface NavbarProps {
   cart: CartItem[];
@@ -54,6 +55,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             </span>
           </div>
           <div className="flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-1.5 bg-neutral-800/80 border border-neutral-700/60 rounded-full py-0.5 px-2.5">
+              <img 
+                src={pizzaGardenLogo} 
+                alt="Pizza Garden" 
+                className="w-4 h-4 rounded-full bg-white p-0.5 object-contain"
+              />
+              <span className="text-[11px] font-bold text-amber-300">PizzaGarden Chakwal</span>
+            </div>
             <a
               href={`https://wa.me/${PIZZAGARDEN_CONTACT.whatsappRaw}?text=Hello%20PizzaGarden%20Chakwal!%20I%20would%20like%20to%20place%20an%20order.`}
               target="_blank"
@@ -85,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <div className="relative w-12 h-12 rounded-full bg-white p-0.5 shadow-md shadow-amber-500/10 border-2 border-amber-400/40 transition-transform group-hover:scale-105 flex items-center justify-center overflow-hidden">
               <img 
-                src="/pizzagarden-logo.svg" 
+                src={pizzaGardenLogo} 
                 alt="Pizza Garden Official Logo" 
                 className="w-full h-full object-contain"
               />
@@ -168,6 +177,21 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </button>
 
+            {/* Top-Right Logo Badge */}
+            <div 
+              onClick={() => handleNavClick('hero')}
+              className="hidden sm:flex items-center gap-2 pl-2 border-l border-neutral-800 cursor-pointer group"
+              title="PizzaGarden Chakwal"
+            >
+              <div className="w-10 h-10 rounded-full bg-white p-0.5 border border-amber-400/50 shadow-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105">
+                <img 
+                  src={pizzaGardenLogo} 
+                  alt="Pizza Garden Chakwal" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -182,6 +206,15 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-neutral-950 border-b border-neutral-800 px-4 py-5 space-y-3">
+          <div className="flex items-center gap-3 pb-3 mb-2 border-b border-neutral-800">
+            <div className="w-10 h-10 rounded-full bg-white p-0.5 border border-amber-400 flex items-center justify-center overflow-hidden">
+              <img src={pizzaGardenLogo} alt="Pizza Garden" className="w-full h-full object-contain" />
+            </div>
+            <div>
+              <div className="font-extrabold text-white text-sm">PizzaGarden Chakwal</div>
+              <div className="text-xs text-amber-400">Order &amp; Table Reservations</div>
+            </div>
+          </div>
           <button
             onClick={() => handleNavClick('deals')}
             className="w-full text-left px-3 py-2 text-base font-semibold text-neutral-200 hover:bg-neutral-900 rounded-lg flex items-center gap-2"

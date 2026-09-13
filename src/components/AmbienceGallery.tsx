@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Sparkles, Calendar, Heart, Shield, Maximize2, X } from 'lucide-react';
 import { PIZZAGARDEN_CONTACT } from '../data/menuData';
+import heroImg from '../assets/images/pizzagarden_hero_1789213225448.jpg';
+import pizzaDelightImg from '../assets/images/pizza_delight_1789213397214.jpg';
+import trainPizzaImg from '../assets/images/train_pizza_1789213434117.jpg';
+import nightExteriorImg from '../assets/images/reel_night_exterior_1789223153243.jpg';
+import circularBoothImg from '../assets/images/reel_circular_booth_1789223197371.jpg';
+import indoorAmbienceImg from '../assets/images/reel_indoor_ambience_1789223165432.jpg';
 
 interface AmbienceGalleryProps {
   onOpenReservation: () => void;
@@ -11,42 +17,42 @@ const AMBIENCE_PHOTOS = [
     id: 'hero-dining',
     title: 'Central Palm Dining Hall',
     description: 'Under warm amber chandeliers with lush tropical indoor palms and circular booth seating.',
-    image: '/assets/images/pizzagarden_hero_1789213225448.jpg',
+    image: indoorAmbienceImg,
     badge: 'Main Dining',
   },
   {
     id: 'food-delight',
     title: 'Freshly Baked Wood-Style Pizza',
     description: 'Golden bubbling 100% real mozzarella cheese on fresh handmade crust.',
-    image: '/assets/images/pizza_delight_1789213397214.jpg',
+    image: pizzaDelightImg,
     badge: 'Wood-Oven Craft',
   },
   {
     id: 'food-train',
     title: 'The 36-Inch Train Feast',
     description: 'Chakwal’s longest continuous pizza plank, featuring three customized flavours.',
-    image: '/assets/images/train_pizza_1789213434117.jpg',
+    image: trainPizzaImg,
     badge: 'The Big Boss',
   },
   {
-    id: 'food-burger',
-    title: 'Crispy Double-Crunch Burgers',
-    description: 'Golden fried chicken fillets layered with fresh iceberg lettuce and garlic mayo.',
-    image: '/assets/images/zinger_burger_1789213414778.jpg',
-    badge: 'Burger Station',
+    id: 'circular-booth',
+    title: 'Family Privacy & Circular Booths',
+    description: 'Comfortable semi-private family booths designed for gatherings and birthday dinners.',
+    image: circularBoothImg,
+    badge: 'Family Comfort',
   },
   {
-    id: 'food-rolls',
-    title: 'Signature Behari Spin Rolls',
-    description: 'Stuffed spicy chicken and melted cheese rolls served with creamy garlic dip.',
-    image: '/assets/images/spin_rolls_1789213450425.jpg',
-    badge: 'Appetizer Special',
+    id: 'food-ambience',
+    title: 'Warm Atmospheric Lighting',
+    description: 'Lush greenery and soft architectural lighting create the coziest restaurant vibe.',
+    image: heroImg,
+    badge: 'Dining Hall',
   },
   {
     id: 'entrance-steps',
     title: 'Illuminated Grand Entrance',
     description: 'Warm fairy-lit staircase welcoming guests from Talagang Highway, Chakwal.',
-    image: '/assets/images/interior-collage.jpg',
+    image: nightExteriorImg,
     badge: 'Night Ambience',
   },
 ];

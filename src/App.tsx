@@ -18,11 +18,19 @@ import { DEALS, MENU_ITEMS } from './data/menuData';
 import { CartItem, MenuItem, DealItem, Order, Reservation, OrderStatus } from './types';
 
 export default function App() {
-  // Cart state with localStorage persistence
+  // Cart state with localStorage persistence and cache migration
   const [cart, setCart] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem('pizzagarden_cart');
-      return saved ? JSON.parse(saved) : [];
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.some((it: CartItem) => typeof it.image === 'string' && it.image.startsWith('/assets/'))) {
+          localStorage.removeItem('pizzagarden_cart');
+          return [];
+        }
+        return parsed;
+      }
+      return [];
     } catch {
       return [];
     }
@@ -48,7 +56,7 @@ export default function App() {
             name: "The Big Boss Train Pizza (36'')",
             price: 3599,
             quantity: 1,
-            image: '/assets/images/train_pizza_1789213434117.jpg',
+            image: DEALS[0].image,
             selectedFlavours: ['Chicken Tikka', 'Mayo Garlic Ranch', 'Super Supreme'],
           },
         ],
@@ -88,7 +96,16 @@ export default function App() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>(() => {
     try {
       const saved = localStorage.getItem('pizzagarden_menu_items');
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          if (parsed.some((it: MenuItem) => typeof it.image === 'string' && it.image.startsWith('/assets/'))) {
+            localStorage.removeItem('pizzagarden_menu_items');
+            return MENU_ITEMS;
+          }
+          return parsed;
+        }
+      }
     } catch {}
     return MENU_ITEMS;
   });
