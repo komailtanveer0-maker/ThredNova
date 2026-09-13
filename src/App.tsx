@@ -14,7 +14,7 @@ import { Footer } from './components/Footer';
 import { CartDrawer } from './components/CartDrawer';
 import { TableReservationModal } from './components/TableReservationModal';
 import { StaffPortalModal } from './components/StaffPortalModal';
-import { DEALS, MENU_ITEMS, FULL_MENU_POSTER_DEAL } from './data/menuData';
+import { DEALS, MENU_ITEMS } from './data/menuData';
 import { CartItem, MenuItem, DealItem, Order, Reservation, OrderStatus } from './types';
 
 export default function App() {
@@ -308,7 +308,7 @@ export default function App() {
       <Footer
         onOpenReservation={() => setIsReservationOpen(true)}
         onOpenStaff={() => setIsStaffOpen(true)}
-        onViewMenuPoster={() => setActivePosterDeal(FULL_MENU_POSTER_DEAL)}
+        onViewMenuPoster={() => handleNavigate('menu')}
         onNavigate={handleNavigate}
       />
 
