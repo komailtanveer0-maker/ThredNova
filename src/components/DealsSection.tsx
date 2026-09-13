@@ -12,13 +12,18 @@ import { DEALS, PIZZAGARDEN_CONTACT } from '../data/menuData';
 import { DealItem } from '../types';
 
 interface DealsSectionProps {
+  deals?: DealItem[];
   onAddDealToCart: (deal: DealItem) => void;
   onViewPoster?: (deal: DealItem) => void;
 }
 
 export const DealsSection: React.FC<DealsSectionProps> = ({
+  deals = DEALS,
   onAddDealToCart,
 }) => {
+  const currentDeals = deals && deals.length > 0 ? deals : DEALS;
+  const trainPizzaDeal = currentDeals.find((d) => d.id === 'deal-train-pizza') || currentDeals[0];
+  const otherDeals = currentDeals.filter((d) => d.id !== trainPizzaDeal?.id);
   return (
     <section id="deals" className="py-20 bg-neutral-900/50 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,14 +89,16 @@ export const DealsSection: React.FC<DealsSectionProps> = ({
 
               <div className="flex flex-wrap items-center gap-4 pt-4">
                 <div className="text-left">
-                  <span className="text-xs text-neutral-400 block line-through">Rs. 4,200</span>
+                  {trainPizzaDeal.originalPrice && (
+                    <span className="text-xs text-neutral-400 block line-through">Rs. {trainPizzaDeal.originalPrice}</span>
+                  )}
                   <div className="text-3xl sm:text-4xl font-black text-amber-400">
-                    Rs. 3,599
+                    Rs. {trainPizzaDeal.price}
                   </div>
                 </div>
 
                 <button
-                  onClick={() => onAddDealToCart(DEALS[0])}
+                  onClick={() => onAddDealToCart(trainPizzaDeal)}
                   className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 font-extrabold text-sm shadow-lg shadow-amber-500/20 transition-all flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <Plus className="w-4 h-4" />
@@ -105,7 +112,7 @@ export const DealsSection: React.FC<DealsSectionProps> = ({
                 className="relative rounded-2xl overflow-hidden border-2 border-neutral-700/60 shadow-2xl max-w-sm w-full"
               >
                 <img
-                  src={DEALS[0].image}
+                  src={trainPizzaDeal.image}
                   alt="36-Inch Train Pizza PizzaGarden"
                   className="w-full h-72 sm:h-80 object-cover"
                   referrerPolicy="no-referrer"
@@ -121,9 +128,9 @@ export const DealsSection: React.FC<DealsSectionProps> = ({
           </div>
         </div>
 
-        {/* 3 Other Featured Deals Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {DEALS.slice(1).map((deal) => (
+        {/* Other Featured Deals Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {otherDeals.map((deal) => (
             <div
               key={deal.id}
               className="bg-neutral-950 rounded-3xl border border-neutral-800 overflow-hidden flex flex-col justify-between hover:border-amber-500/40 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/5 group"

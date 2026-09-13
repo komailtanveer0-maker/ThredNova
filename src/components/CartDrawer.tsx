@@ -11,9 +11,11 @@ import {
   Send, 
   CheckCircle2, 
   Sparkles,
-  UtensilsCrossed
+  UtensilsCrossed,
+  Truck,
+  AlertCircle
 } from 'lucide-react';
-import { CartItem, OrderType, Order } from '../types';
+import { CartItem, OrderType, Order, DeliverySettings, DEFAULT_DELIVERY_SETTINGS } from '../types';
 import { PIZZAGARDEN_CONTACT } from '../data/menuData';
 
 interface CartDrawerProps {
@@ -24,6 +26,7 @@ interface CartDrawerProps {
   onRemoveItem: (id: string) => void;
   onClearCart: () => void;
   onOrderPlaced: (order: Order) => void;
+  deliverySettings?: DeliverySettings;
 }
 
 export const CartDrawer: React.FC<CartDrawerProps> = ({
@@ -34,6 +37,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   onRemoveItem,
   onClearCart,
   onOrderPlaced,
+  deliverySettings,
 }) => {
   const [orderType, setOrderType] = useState<OrderType>('delivery');
   const [customerName, setCustomerName] = useState('');
@@ -46,9 +50,21 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
   if (!isOpen) return null;
 
+  const currentDeliverySettings = deliverySettings || DEFAULT_DELIVERY_SETTINGS;
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const deliveryFee = orderType === 'delivery' && subtotal > 0 ? PIZZAGARDEN_CONTACT.deliveryFeeDefault : 0;
+
+  const qualifiesForFreeDelivery = 
+    Boolean(currentDeliverySettings.freeDeliveryThreshold && 
+    currentDeliverySettings.freeDeliveryThreshold > 0 && 
+    subtotal >= currentDeliverySettings.freeDeliveryThreshold);
+
+  const baseDeliveryFee = currentDeliverySettings.deliveryFee;
+  const deliveryFee = orderType === 'delivery' && subtotal > 0 
+    ? (qualifiesForFreeDelivery ? 0 : baseDeliveryFee) 
+    : 0;
   const total = subtotal + deliveryFee;
+
+  const isDeliveryDisabled = orderType === 'delivery' && !currentDeliverySettings.isDeliveryActive;
 
   const formatWhatsAppMessage = () => {
     let msg = `*🍕 PIZZAGARDEN CHAKWAL - NEW ORDER*\n`;
@@ -90,6 +106,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   };
 
   const handleWhatsAppOrder = () => {
+    if (isDeliveryDisabled) {
+      alert('Home delivery is currently paused by kitchen staff. Please select Takeaway or Dine-in to proceed.');
+      return;
+    }
     if (!customerName || !customerPhone) {
       alert('Please enter your name and phone number before sending order.');
       return;
@@ -130,6 +150,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   const handleOnlineOrder = async (e: React.FormEvent) => {
     e.preventDefault();
     if (cart.length === 0) return;
+    if (isDeliveryDisabled) {
+      alert('Home delivery is currently paused by kitchen staff. Please select Takeaway or Dine-in to proceed.');
+      return;
+    }
     if (!customerName || !customerPhone) {
       alert('Please provide your name and phone number.');
       return;
@@ -313,6 +337,47 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </button>
               </div>
 
+              {/* Delivery info & pause notices */}
+              {orderType === 'delivery' && (
+                <div className="space-y-2">
+                  {isDeliveryDisabled ? (
+                    <div className="p-3 rounded-xl bg-red-500/15 border border-red-500/30 text-xs text-red-200 flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-bold block text-red-300">Home Delivery Temporarily Paused</span>
+                        <span>Due to high oven rush, kitchen has paused delivery. Please select Takeaway or Dine-in.</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 px-3 py-2 rounded-xl bg-neutral-900 border border-neutral-800 text-xs text-neutral-300">
+                      <div className="flex items-center gap-1.5 text-amber-400 font-semibold">
+                        <Truck className="w-3.5 h-3.5" />
+                        <span>Chakwal City Delivery: {deliveryFee === 0 ? 'FREE' : `Rs. ${deliveryFee}`}</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-[11px] text-neutral-400">
+                        <Clock className="w-3 h-3" />
+                        <span>ETA: {currentDeliverySettings.estimatedTime || '30 - 45 mins'}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Free delivery threshold encouragement if enabled */}
+                  {Boolean(currentDeliverySettings.freeDeliveryThreshold && currentDeliverySettings.freeDeliveryThreshold > 0) && (
+                    qualifiesForFreeDelivery ? (
+                      <div className="px-3 py-1.5 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-[11px] text-emerald-300 flex items-center gap-1.5 font-medium">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                        <span>Congratulations! You qualify for <strong>FREE Delivery</strong> on this order.</span>
+                      </div>
+                    ) : (
+                      <div className="px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-300 flex items-center justify-between">
+                        <span>Special: Add <strong>Rs. {currentDeliverySettings.freeDeliveryThreshold! - subtotal}</strong> more for Free Delivery!</span>
+                        <span className="font-bold text-amber-400">Rs. {currentDeliverySettings.freeDeliveryThreshold}</span>
+                      </div>
+                    )
+                  )}
+                </div>
+              )}
+
               {/* Cart Items List */}
               <div className="space-y-3">
                 {cart.map((item) => (
@@ -467,8 +532,17 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               </div>
               {orderType === 'delivery' && (
                 <div className="flex justify-between text-neutral-400">
-                  <span>Chakwal City Delivery</span>
-                  <span className="font-semibold text-white">Rs. {deliveryFee}</span>
+                  <span className="flex items-center gap-1.5">
+                    <Truck className="w-3.5 h-3.5 text-amber-400" />
+                    <span>Chakwal City Delivery</span>
+                  </span>
+                  {qualifiesForFreeDelivery ? (
+                    <span className="font-bold text-emerald-400">FREE PROMOTION (Was Rs. {baseDeliveryFee})</span>
+                  ) : deliveryFee === 0 ? (
+                    <span className="font-bold text-emerald-400">FREE DELIVERY</span>
+                  ) : (
+                    <span className="font-semibold text-white">Rs. {deliveryFee}</span>
+                  )}
                 </div>
               )}
               <div className="flex justify-between text-sm font-extrabold text-white pt-2 border-t border-neutral-800">
@@ -480,10 +554,19 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             {/* Send Order via WhatsApp */}
             <button
               onClick={handleWhatsAppOrder}
-              className="w-full py-4 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-xl shadow-emerald-600/25 transition-all flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99]"
+              disabled={isDeliveryDisabled}
+              className={`w-full py-4 px-4 rounded-xl font-extrabold text-sm shadow-xl transition-all flex items-center justify-center gap-2 ${
+                isDeliveryDisabled
+                  ? 'bg-neutral-800 text-neutral-500 cursor-not-allowed border border-neutral-700'
+                  : 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/25 hover:scale-[1.01] active:scale-[0.99] cursor-pointer'
+              }`}
             >
               <Phone className="w-4 h-4" />
-              <span>Send Order via WhatsApp (+92 329 6864242)</span>
+              <span>
+                {isDeliveryDisabled
+                  ? 'Delivery Paused - Select Takeaway or Dine-in'
+                  : 'Send Order via WhatsApp (+92 329 6864242)'}
+              </span>
             </button>
             <p className="text-[11px] text-center text-neutral-400">
               ⚡ Instant receipt &amp; kitchen notification sent directly to PizzaGarden Chakwal.

@@ -108,3 +108,22 @@ export interface StaffUser {
   role: 'manager' | 'kitchen' | 'waitstaff';
   token: string;
 }
+
+export interface DeliverySettings {
+  deliveryFee: number;
+  minOrderAmount: number;
+  freeDeliveryThreshold?: number; // 0 means disabled
+  isDeliveryActive: boolean;
+  estimatedTime: string;
+  deliveryNotes?: string;
+  updatedAt?: string;
+}
+
+export const DEFAULT_DELIVERY_SETTINGS: DeliverySettings = {
+  deliveryFee: 100,
+  minOrderAmount: 500,
+  freeDeliveryThreshold: 0,
+  isDeliveryActive: true,
+  estimatedTime: '30 - 45 mins',
+  deliveryNotes: 'Covering Chakwal city, Talagang Road, NFC and adjacent localities',
+};

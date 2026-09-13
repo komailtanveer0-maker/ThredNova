@@ -15,7 +15,7 @@ import { CartDrawer } from './components/CartDrawer';
 import { TableReservationModal } from './components/TableReservationModal';
 import { StaffPortalModal } from './components/StaffPortalModal';
 import { DEALS, MENU_ITEMS } from './data/menuData';
-import { CartItem, MenuItem, DealItem, Order, Reservation, OrderStatus } from './types';
+import { CartItem, MenuItem, DealItem, Order, Reservation, OrderStatus, DeliverySettings, DEFAULT_DELIVERY_SETTINGS } from './types';
 
 export default function App() {
   // Cart state with localStorage persistence and cache migration
@@ -110,10 +110,51 @@ export default function App() {
     return MENU_ITEMS;
   });
 
+  // Deals state (supports adding/editing/uploading deals with persistent storage)
+  const [deals, setDeals] = useState<DealItem[]>(() => {
+    try {
+      const saved = localStorage.getItem('pizzagarden_deals');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          if (parsed.some((it: DealItem) => typeof it.image === 'string' && it.image.startsWith('/assets/'))) {
+            localStorage.removeItem('pizzagarden_deals');
+            return DEALS;
+          }
+          return parsed;
+        }
+      }
+    } catch {}
+    return DEALS;
+  });
+
+  // Delivery Settings state (dynamically editable by staff in Staff Portal)
+  const [deliverySettings, setDeliverySettings] = useState<DeliverySettings>(() => {
+    try {
+      const saved = localStorage.getItem('pizzagarden_delivery_settings');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && typeof parsed.deliveryFee === 'number') {
+          return { ...DEFAULT_DELIVERY_SETTINGS, ...parsed };
+        }
+      }
+    } catch {}
+    return DEFAULT_DELIVERY_SETTINGS;
+  });
+
   // Modals visibility state
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isReservationOpen, setIsReservationOpen] = useState(false);
   const [isStaffOpen, setIsStaffOpen] = useState(false);
+
+  // Sync delivery settings to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('pizzagarden_delivery_settings', JSON.stringify(deliverySettings));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [deliverySettings]);
 
   // Sync cart to localStorage
   useEffect(() => {
@@ -151,6 +192,15 @@ export default function App() {
     }
   }, [menuItems]);
 
+  // Sync deals to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('pizzagarden_deals', JSON.stringify(deals));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [deals]);
+
   const handleUpdateMenuItem = (updatedItem: MenuItem) => {
     setMenuItems((prev) =>
       prev.map((item) => (item.id === updatedItem.id ? updatedItem : item))
@@ -163,6 +213,20 @@ export default function App() {
 
   const handleDeleteMenuItem = (itemId: string) => {
     setMenuItems((prev) => prev.filter((item) => item.id !== itemId));
+  };
+
+  const handleUpdateDeal = (updatedDeal: DealItem) => {
+    setDeals((prev) =>
+      prev.map((d) => (d.id === updatedDeal.id ? updatedDeal : d))
+    );
+  };
+
+  const handleAddDeal = (newDeal: DealItem) => {
+    setDeals((prev) => [newDeal, ...prev]);
+  };
+
+  const handleDeleteDeal = (dealId: string) => {
+    setDeals((prev) => prev.filter((d) => d.id !== dealId));
   };
 
   // Navigation smooth scroll handler
@@ -306,6 +370,7 @@ export default function App() {
 
         {/* Special Deals & 36'' Train Pizza */}
         <DealsSection
+          deals={deals}
           onAddDealToCart={handleAddDealToCart}
         />
 
@@ -338,6 +403,7 @@ export default function App() {
         onRemoveItem={handleRemoveItem}
         onClearCart={handleClearCart}
         onOrderPlaced={handleOrderPlaced}
+        deliverySettings={deliverySettings}
       />
 
       {/* Table Reservation Modal */}
@@ -358,6 +424,12 @@ export default function App() {
         onUpdateMenuItem={handleUpdateMenuItem}
         onAddMenuItem={handleAddMenuItem}
         onDeleteMenuItem={handleDeleteMenuItem}
+        deals={deals}
+        onUpdateDeal={handleUpdateDeal}
+        onAddDeal={handleAddDeal}
+        onDeleteDeal={handleDeleteDeal}
+        deliverySettings={deliverySettings}
+        onUpdateDeliverySettings={setDeliverySettings}
       />
     </div>
   );
